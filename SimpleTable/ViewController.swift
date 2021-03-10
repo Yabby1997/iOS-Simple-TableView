@@ -63,6 +63,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             let text: String = indexPath.section == 0 ? korean[indexPath.row] : indexPath.section == 1 ? english[indexPath.row] : self.dateFormatter.string(from: dates[indexPath.row])
             
+            if indexPath.row == 0 {
+                cell.backgroundColor = UIColor.red
+            } else {
+                cell.backgroundColor = UIColor.white
+            }
+            
             cell.textLabel?.text = text
             return cell
         } else {
