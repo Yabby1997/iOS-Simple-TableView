@@ -63,12 +63,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             let text: String = indexPath.section == 0 ? korean[indexPath.row] : indexPath.section == 1 ? english[indexPath.row] : self.dateFormatter.string(from: dates[indexPath.row])
             
-            if indexPath.row == 0 {
-                cell.backgroundColor = UIColor.red
-            } else {
-                cell.backgroundColor = UIColor.white
-            }
-            
             cell.textLabel?.text = text
             return cell
         } else {
@@ -97,8 +91,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: - IBAction
     @IBAction func touchUpAddButton(_ sender: Any) {
         dates.append(Date())
-//        self.tableView.reloadData()
         self.tableView.reloadSections(IndexSet(2...2), with: UITableView.RowAnimation.automatic)
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let nextViewController: SecondViewController = segue.destination as? SecondViewController else {
+            return
+        }
+        
+        guard let cell: UITableViewCell = sender as? UITableViewCell else {
+            return
+        }
+        
+        nextViewController.textToSet = cell.textLabel?.text
     }
 }
 
