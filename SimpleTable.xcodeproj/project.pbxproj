@@ -13,6 +13,7 @@
 		1D05B85525F8B0E100AD2DCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D05B85325F8B0E100AD2DCA /* Main.storyboard */; };
 		1D05B85725F8B0E300AD2DCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D05B85625F8B0E300AD2DCA /* Assets.xcassets */; };
 		1D05B85A25F8B0E300AD2DCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D05B85825F8B0E300AD2DCA /* LaunchScreen.storyboard */; };
+		1D48A46A25F8CD5A007AB282 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D48A46925F8CD5A007AB282 /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1D05B85625F8B0E300AD2DCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D05B85925F8B0E300AD2DCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D05B85B25F8B0E300AD2DCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D48A46925F8CD5A007AB282 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				1D05B84F25F8B0E100AD2DCA /* SceneDelegate.swift */,
 				1D05B85125F8B0E100AD2DCA /* ViewController.swift */,
 				1D05B85325F8B0E100AD2DCA /* Main.storyboard */,
+				1D48A46925F8CD5A007AB282 /* CustomTableViewCell.swift */,
 				1D05B85625F8B0E300AD2DCA /* Assets.xcassets */,
 				1D05B85825F8B0E300AD2DCA /* LaunchScreen.storyboard */,
 				1D05B85B25F8B0E300AD2DCA /* Info.plist */,
@@ -139,6 +142,7 @@
 			files = (
 				1D05B85225F8B0E100AD2DCA /* ViewController.swift in Sources */,
 				1D05B84E25F8B0E100AD2DCA /* AppDelegate.swift in Sources */,
+				1D48A46A25F8CD5A007AB282 /* CustomTableViewCell.swift in Sources */,
 				1D05B85025F8B0E100AD2DCA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
