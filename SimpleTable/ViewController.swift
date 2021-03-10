@@ -15,6 +15,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let cellIdentifier: String = "cell"
     let korean: [String] = ["가", "나", "다", "라", "마", "바", "사", "아", "자", "차", "카", "타", "파", "하"]
     let english: [String] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    var dates: [Date] = []
+    
+    let dateFormatter: DateFormatter = {
+        let formatter: DateFormatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
+        return formatter
+    }()
     
     // MARK: - LifeCycle Methods
     override func viewDidLoad() {
@@ -26,7 +34,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: - TableView DataSource Methods
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,6 +43,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return korean.count
         case 1:
             return english.count
+        case 2:
+            return dates.count
         default:
             return 0
         }
@@ -43,7 +53,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
         
-        let text: String = indexPath.section == 0 ? korean[indexPath.row] : english[indexPath.row]
+        let text: String = indexPath.section == 0 ? korean[indexPath.row] : indexPath.section == 1 ? english[indexPath.row] : self.dateFormatter.string(from: dates[indexPath.row])
+        
         cell.textLabel?.text = text
         
         return cell
@@ -55,9 +66,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return "한글"
         case 1:
             return "영어"
+        case 2:
+            return "시간"
         default:
             return "?"
         }
+    }
+    
+    // MARK: - IBAction
+    @IBAction func touchUpAddButton(_ sender: Any) {
+        dates.append(Date())
+//        self.tableView.reloadData()
+        self.tableView.reloadSections(IndexSet(2...2), with: UITableView.RowAnimation.automatic)
     }
 }
 
