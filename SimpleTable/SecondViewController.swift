@@ -18,11 +18,6 @@ class SecondViewController: UIViewController {
     // MARK: - View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         textLabel.text = textToSet
-    }
+    } 
 }
